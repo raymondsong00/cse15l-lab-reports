@@ -1,8 +1,8 @@
 # Installing VSCode
 
-Download VSCode from [Link](https://code.visualstudio.com/). 
-Then, when you open it you should get this image
-![Image]()
+Download VSCode from [Link](https://code.visualstudio.com/) for whatever operating system you have.
+Then, when you open it you should get this image.
+![Image](Screenshot_20230111_140825.png)
 
 # Remotely Connecting
 If you haven't changed your password yet, reset your password with [Link](https://sdacs.ucsd.edu/~icc/index.php)
@@ -14,7 +14,12 @@ The first time you connect to a server it will ask for authentication for the si
 type `yes` and enter.
 Then type your newly changed password.
 You should get something like this image
-![Image]()
+
+![Image](Screenshot_20230111_140901.png)
+
+![Image](Screenshot_20230111_133202.png)
+
+To exit the remote server you can use Crtl + D or `exit` in the terminal.
 
 # Trying Some Commands
 Try commands like `cd`, `cp`, `ls`, or `pwd`
@@ -27,6 +32,6 @@ Some other commands to try are
 The hyphen gives more options for the output of the command.
 
 You might get something like this
-![Image]()
+![Image](Screenshot_20230111_134144.png)
 
 These commands won't work for a windows computer because these commands are built for UNIX and UNIX-like Operating Systems.
