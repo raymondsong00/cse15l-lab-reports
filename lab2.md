@@ -150,7 +150,7 @@ static List<String> merge(List<String> list1, List<String> list2) {
     }
 ```
 
-This method fails because after adding all of input1 and `a` and `b` of `input2` it needs to add `z` but the code does not increment correctly so it doesn't loop through the rest of the second array, which causes an infinite loop. The test will never end so it fails.
+This method fails because after adding `a` and `b` of `input2` and adding all of `input1` in the second while loop, it needs to add `z` but the code does not increment correctly so it doesn't loop through the rest of the second array, which causes an infinite loop. The test will never end so it fails.
 ### The JUnit Test that passes
 ```
 @Test
