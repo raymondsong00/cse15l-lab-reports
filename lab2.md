@@ -50,16 +50,6 @@ class StringServer {
 // A simple web server using Java's built-in HttpServer
 
 // Examples from https://dzone.com/articles/simple-http-server-in-java were useful references
-
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.InetSocketAddress;
-import java.net.URI;
-
-import com.sun.net.httpserver.HttpExchange;
-import com.sun.net.httpserver.HttpHandler;
-import com.sun.net.httpserver.HttpServer;
-
 interface URLHandler {
     String handleRequest(URI url);
 }
@@ -103,12 +93,14 @@ public class Server {
 ```
 
 <img width="371" alt="image" src="https://user-images.githubusercontent.com/87511256/214713401-32f02057-d2b9-4799-8341-b9ea20a5d65f.png">
+
 The main method is used to start the Server.
 The `Handler` `handleRequest` method is called whenever the server is updated with a url. 
 The main method has a `String[] args` that is used to take in the integer in `args[0]` to be the port number.
 The `handleRequest` method takes in a `URI` named `url` which is `https:localhost:4000/add-message?s=Hello`.
 The class variable words for the Handler is created as `""` and then added to with the end of the URI `Hello` to get `words=Hello\n`. 
 <img width="416" alt="image" src="https://user-images.githubusercontent.com/87511256/214714914-cc8fa46b-eeff-4adc-afce-28e9e6b1be8c.png">
+
 The `Handler` `handleRequest` method is called whenever the server is updated with a url.
 The `handleRequest` method takes in a `URI` named `url` which is `https:localhost:4000/add-message?s=How are you`.
 The class variable words for the Handler starts as `Hello\n` and then `How are you\n` is added to get `words=Hello\nHow are you\n`. 
@@ -156,6 +148,8 @@ static List<String> merge(List<String> list1, List<String> list2) {
         assertArrayEquals(new String[] {"a", "b", "m", "o", "z"}, ListExamples.merge(input1, input2).toArray());
     }
 ```
+
+This method fails because after adding all of input1 and `a` and `b` of `input2` it needs to add `z` but the code does not increment correctly so it doesn't loop through the rest of the second array, which causes an infinite loop. The test will never end so it fails.
 ### The JUnit Test that passes
 ```
 @Test
@@ -169,9 +163,12 @@ static List<String> merge(List<String> list1, List<String> list2) {
         assertArrayEquals(new String[] {"a", "b", "m", "o"}, ListExamples.merge(input1, input2).toArray());
     }
 ```
+This test checks both lists and adds the smaller character, in this case, `a` and `b` from `input2` are added first. Then, it exits the first wihle loop and enter the second one to add the rest of the `input1`. This is the expected behavior of this method.
 
 ### Running the JUnit Tests
 <img width="361" alt="image" src="https://user-images.githubusercontent.com/87511256/214719587-fef0ce03-d281-4966-8582-e58d5e0e6fd9.png">
+
+This code never has an assertion error because there is an infinite loop. It won't show a test has failed.
 
 ### Buggy Code
 ```
