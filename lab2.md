@@ -98,7 +98,8 @@ The main method is used to start the Server.
 The `Handler` `handleRequest` method is called whenever the server is updated with a url. 
 The main method has a `String[] args` that is used to take in the integer in `args[0]` to be the port number.
 The `handleRequest` method takes in a `URI` named `url` which is `https:localhost:4000/add-message?s=Hello`.
-The class variable words for the Handler is created as `""` and then added to with the end of the URI `Hello` to get `words=Hello\n`. 
+The class variable words for the Handler is created as `""` and then added to with the end of the URI `Hello` to get `words=Hello\n`.
+
 <img width="416" alt="image" src="https://user-images.githubusercontent.com/87511256/214714914-cc8fa46b-eeff-4adc-afce-28e9e6b1be8c.png">
 
 The `Handler` `handleRequest` method is called whenever the server is updated with a url.
